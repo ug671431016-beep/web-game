@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guessing Game</title>
+</head>
+<body>
+    <h1>Game</h1>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 11);
+        let guess;
+
+        while (true) {
+            guess = prompt("Guess a number between 0 and 10:");
+
+            if (guess === null) {
+                alert("Game cancelled.");
+                break;
+            }
+
+            guess = Number(guess);
+
+            if (guess === randomNumber) {
+                alert("Yeah, you guessed it!");
+                break;
+            } else if (guess < randomNumber) {
+                alert("Too low, try again.");
+            } else if (guess > randomNumber) {
+                alert("Too high, try again.");
+            } else {
+                alert("Invalid input!");
+            }
+        }
+    </script>
+</body>
+</html>
